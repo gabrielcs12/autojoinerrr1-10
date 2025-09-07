@@ -3,8 +3,8 @@ ScreenGui.Name = "AutoJoinUI"
 ScreenGui.Parent = game:GetService("CoreGui")
 
 local MainFrame = Instance.new("Frame")
-MainFrame.Size = UDim2.new(0, 300, 0, 220)
-MainFrame.Position = UDim2.new(0.5, -150, 0.4, -110)
+MainFrame.Size = UDim2.new(0, 300, 0, 200)
+MainFrame.Position = UDim2.new(0.5, -150, 0.4, -100)
 MainFrame.BackgroundColor3 = Color3.fromRGB(45, 0, 65) -- Roxo escuro
 MainFrame.BorderSizePixel = 0
 MainFrame.Active = true
@@ -31,17 +31,6 @@ Title.Parent = MainFrame
 local TitleCorner = Instance.new("UICorner")
 TitleCorner.CornerRadius = UDim.new(0, 10)
 TitleCorner.Parent = Title
-
--- Discord
-local DiscordLabel = Instance.new("TextLabel")
-DiscordLabel.Size = UDim2.new(1, -20, 0, 25)
-DiscordLabel.Position = UDim2.new(0, 10, 0, 45)
-DiscordLabel.BackgroundTransparency = 1
-DiscordLabel.Text = "discord.gg/scripterscorporation"
-DiscordLabel.TextColor3 = Color3.fromRGB(180, 150, 255)
-DiscordLabel.Font = Enum.Font.Gotham
-DiscordLabel.TextSize = 14
-DiscordLabel.Parent = MainFrame
 
 local HttpService = game:GetService("HttpService")
 
@@ -88,7 +77,7 @@ local MinMS = config.MinMS or 1000000
 local AutoJoinEnabled = false
 local Toggle = Instance.new("TextButton")
 Toggle.Size = UDim2.new(1, -20, 0, 35)
-Toggle.Position = UDim2.new(0, 10, 0, 75)
+Toggle.Position = UDim2.new(0, 10, 0, 60)
 Toggle.BackgroundColor3 = Color3.fromRGB(90, 0, 130) -- Roxo médio
 Toggle.Text = "Auto Join: OFF"
 Toggle.TextColor3 = Color3.fromRGB(255, 100, 100)
@@ -105,7 +94,7 @@ end)
 -- Min Label
 local MinLabel = Instance.new("TextLabel")
 MinLabel.Size = UDim2.new(1, -20, 0, 25)
-MinLabel.Position = UDim2.new(0, 10, 0, 115)
+MinLabel.Position = UDim2.new(0, 10, 0, 105)
 MinLabel.BackgroundTransparency = 1
 MinLabel.Text = "Min M/s: " .. formatMoney(MinMS)
 MinLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -116,7 +105,7 @@ MinLabel.Parent = MainFrame
 -- Min TextBox
 local MinBox = Instance.new("TextBox")
 MinBox.Size = UDim2.new(1, -20, 0, 25)
-MinBox.Position = UDim2.new(0, 10, 0, 140)
+MinBox.Position = UDim2.new(0, 10, 0, 130)
 MinBox.BackgroundColor3 = Color3.fromRGB(70, 0, 100) -- Roxo escuro
 MinBox.Text = tostring(MinMS/1000000)
 MinBox.TextColor3 = Color3.fromRGB(255, 255, 255)
