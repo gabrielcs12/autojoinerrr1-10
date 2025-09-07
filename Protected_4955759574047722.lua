@@ -5,7 +5,7 @@ ScreenGui.Parent = game:GetService("CoreGui")
 local MainFrame = Instance.new("Frame")
 MainFrame.Size = UDim2.new(0, 300, 0, 200)
 MainFrame.Position = UDim2.new(0.5, -150, 0.4, -100)
-MainFrame.BackgroundColor3 = Color3.fromRGB(45, 0, 65) -- Roxo escuro
+MainFrame.BackgroundColor3 = Color3.fromRGB(45, 25, 65) -- Roxo escuro
 MainFrame.BorderSizePixel = 0
 MainFrame.Active = true
 MainFrame.Draggable = true
@@ -15,12 +15,11 @@ local MainCorner = Instance.new("UICorner")
 MainCorner.CornerRadius = UDim.new(0, 10)
 MainCorner.Parent = MainFrame
 
--- Título
 local Title = Instance.new("TextLabel")
 Title.Size = UDim2.new(1, 0, 0, 40)
 Title.Position = UDim2.new(0, 0, 0, 0)
-Title.BackgroundColor3 = Color3.fromRGB(80, 0, 120) -- Roxo mais claro
-Title.Text = "ROOS AUTOJOINER"
+Title.BackgroundColor3 = Color3.fromRGB(70, 40, 100) -- Roxo mais claro
+Title.Text = "ROOS AUTOJOINER 1-10"
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.Font = Enum.Font.GothamBold
 Title.TextSize = 18
@@ -32,6 +31,19 @@ local TitleCorner = Instance.new("UICorner")
 TitleCorner.CornerRadius = UDim.new(0, 10)
 TitleCorner.Parent = Title
 
+-- Créditos (Discord)
+local Credit = Instance.new("TextLabel")
+Credit.Size = UDim2.new(1, -20, 0, 20)
+Credit.Position = UDim2.new(0, 10, 1, -25)
+Credit.BackgroundTransparency = 1
+Credit.Text = "discord.gg/scripterscorporation"
+Credit.TextColor3 = Color3.fromRGB(180, 130, 255) -- Roxo claro
+Credit.Font = Enum.Font.Gotham
+Credit.TextSize = 12
+Credit.TextXAlignment = Enum.TextXAlignment.Center
+Credit.Parent = MainFrame
+
+-- Resto do seu código original (não mexi na lógica)
 local HttpService = game:GetService("HttpService")
 
 local function formatMoney(num)
@@ -77,8 +89,8 @@ local MinMS = config.MinMS or 1000000
 local AutoJoinEnabled = false
 local Toggle = Instance.new("TextButton")
 Toggle.Size = UDim2.new(1, -20, 0, 35)
-Toggle.Position = UDim2.new(0, 10, 0, 60)
-Toggle.BackgroundColor3 = Color3.fromRGB(90, 0, 130) -- Roxo médio
+Toggle.Position = UDim2.new(0, 10, 0, 50)
+Toggle.BackgroundColor3 = Color3.fromRGB(80, 40, 120) -- Roxo
 Toggle.Text = "Auto Join: OFF"
 Toggle.TextColor3 = Color3.fromRGB(255, 100, 100)
 Toggle.Font = Enum.Font.GothamBold
@@ -94,7 +106,7 @@ end)
 -- Min Label
 local MinLabel = Instance.new("TextLabel")
 MinLabel.Size = UDim2.new(1, -20, 0, 25)
-MinLabel.Position = UDim2.new(0, 10, 0, 105)
+MinLabel.Position = UDim2.new(0, 10, 0, 95)
 MinLabel.BackgroundTransparency = 1
 MinLabel.Text = "Min M/s: " .. formatMoney(MinMS)
 MinLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -105,8 +117,8 @@ MinLabel.Parent = MainFrame
 -- Min TextBox
 local MinBox = Instance.new("TextBox")
 MinBox.Size = UDim2.new(1, -20, 0, 25)
-MinBox.Position = UDim2.new(0, 10, 0, 130)
-MinBox.BackgroundColor3 = Color3.fromRGB(70, 0, 100) -- Roxo escuro
+MinBox.Position = UDim2.new(0, 10, 0, 120)
+MinBox.BackgroundColor3 = Color3.fromRGB(100, 60, 160) -- Roxo médio
 MinBox.Text = tostring(MinMS/1000000)
 MinBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 MinBox.Font = Enum.Font.Gotham
